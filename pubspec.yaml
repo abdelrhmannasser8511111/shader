@@ -38,7 +38,8 @@ dependencies:
   dropdown_search:
   searchfield: ^0.8.3
   horizontal_data_table: ^4.3.1
-  adaptive_scrollbar: ^2.1.2
+  custom_date_range_picker: ^1.0.10
+  printing:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.

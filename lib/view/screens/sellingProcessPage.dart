@@ -88,15 +88,16 @@ class _SellingProcessPageState extends State<SellingProcessPage> {
   currentWeigtandboxInCattInResal() {
     double w = 0;
     int c = 0;
+    //
     final f = sellingProcessData.where(
-        (element) => element.categoryFresala == selectedValueInDropDpownM);
+        (element) => element.categoryFresala == selectedValueInDropDpownM).toList();
     print("we do currentWeigtandboxInResal");
-    for (int i = 0; i < sellingProcessData.length; i++) {
-      w += sellingProcessData[i].weight;
-      c += sellingProcessData[i].numbOfBox;
+    for (int i = 0; i < f.length; i++) {
+      w += f[i].weight;
+      c += f[i].numbOfBox;
     }
     cattCurrentBox=choosenResala!.ctegoriesDetails.firstWhere((element) => element.catName==selectedValueInDropDpownM).count-c;
-
+  print("cattCurrentBox==${cattCurrentBox}");
     cattCurrentWeight=choosenResala!.ctegoriesDetails.firstWhere((element) => element.catName==selectedValueInDropDpownM).netWeight-w;
   }
 
@@ -635,9 +636,6 @@ class _SellingProcessPageState extends State<SellingProcessPage> {
                                                     Text(
                                                       choosenResala == null || selectedValueInDropDpownM == null
                                                           ? "0"
-                                                          : sellingProcessData.where((element) => element.categoryFresala==selectedValueInDropDpownM)
-                                                          .isEmpty
-                                                          ? '${(choosenResala!.ctegoriesDetails.firstWhere((element) => element.catName==selectedValueInDropDpownM)).count}'
                                                           : "${cattCurrentBox}",
                                                       style: TextStyle(
                                                           fontSize:
@@ -682,9 +680,6 @@ class _SellingProcessPageState extends State<SellingProcessPage> {
                                                     Text(
                                                       choosenResala == null || selectedValueInDropDpownM == null
                                                           ? "0"
-                                                          : sellingProcessData.where((element) => element.categoryFresala==selectedValueInDropDpownM)
-                                                          .isEmpty
-                                                          ? '${(choosenResala!.ctegoriesDetails.firstWhere((element) => element.catName==selectedValueInDropDpownM)).netWeight}'
                                                           : "${cattCurrentWeight}",
                                                       style: TextStyle(
                                                           fontSize:

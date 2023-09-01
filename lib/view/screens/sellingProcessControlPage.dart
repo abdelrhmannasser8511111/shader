@@ -1,6 +1,6 @@
 import 'dart:collection';
 
-import 'package:adaptive_scrollbar/adaptive_scrollbar.dart';
+
 import 'package:flutter/material.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:shader/model/resala.dart';
